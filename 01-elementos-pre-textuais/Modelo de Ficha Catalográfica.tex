@@ -1,0 +1,24 @@
+%CASO SUA BIBLIOTECA FORNEÇA A FICHA CATALOGRÁFICA DIFERENTE-FAÇA UPLOAD E CHAME NO ARQUIVO PRINCIPAL
+%COM \includepdf[pages=-]{myfile.pdf} OU \includegraphics{myfig.pdf} 
+\begin{fichacatalografica}
+\vspace*{15cm} % Posição vertical
+\hrule % Linha horizontal
+\begin{center} % Minipage Centralizado
+\begin{minipage}[c]{12.5cm} % Largura
+\imprimirautor
+\hspace{0.5cm} \imprimirtitulo / \imprimirautor. 
+\imprimirlocal, \imprimirdata-
+\hspace{0.5cm} \pageref{LastPage} p. : il.(alguma color.); 30 cm.\\
+\hspace{0.5cm} \imprimirorientadorRotulo \; \imprimirorientador\\
+\hspace{0.5cm}
+\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+\imprimirdata.}\\
+\hspace{0.5cm}
+1. Lógica Fuzzy.
+2. Rio Cachoeira.
+3. Modelagem Computacional
+\hspace{8.75cm} CDU 02:141:005.7\\
+\end{minipage}
+\end{center}
+\hrule
+\end{fichacatalografica}

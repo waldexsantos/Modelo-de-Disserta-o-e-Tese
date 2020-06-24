@@ -1,0 +1,65 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   	  UNIVERSIDADE ESTADUAL DE SANTA CRUZ-UESC                  %
+%                                                                   %
+%    MESTRADO EM MODELAGEM COMPUTACIONAL EM CIÊNCIA E TECNOLOGIA    %
+%                                                                   %
+%                    MODELO DE  DISSERTAÇÃO/TESE                    %
+%                                                                   %
+%                     By   Valdex Santos 							%		           
+%                         <waldexsantos@gmail.com>					%
+%                  		  <valdexsantos@ifba.edu.br>				%
+%                         <waldexifba.wordpress.com>                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%=====================================================================
+\include{pacotes/pacoteprincipal} %Carrega o pacote principal
+\include{pacotes/defcor} %carrega as configurações de cores
+% inclui informações sobre AUTORIA, INSTITUIÇÃO e ORIENTAÇÃO do trabalho
+\include{./01-elementos-pre-textuais/1-Inf.Capa-FolhaRosto}
+%========================================================================
+
+% INICIO DO DOCUMENTO
+\begin{document}
+\pretextual
+% retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% elementos pré textuais
+		
+	\imprimircapa						% Capa- elemento obrigatório 
+	\imprimirfolhaderosto{}					% Folha de rosto-- elemento obrigatório
+%	\include{./01-elementos-pre-textuais/FichaCatolografica}	% Ficha catalográfica-- elemento obrigatório
+	\include{./01-elementos-pre-textuais/FolhaAprovacao}	% Folha de aprovação-- elemento obrigatório
+	\include{./01-elementos-pre-textuais/dedicatoria}	% Dedicatória-- elemento opcional, comente se não for colocar
+	\include{./01-elementos-pre-textuais/agradecimentos}% Agradecimentos-- elemento opcional, comente se não for colocar
+	\include{./01-elementos-pre-textuais/epigrafe}		% Epígrafe-- elemento opcional, comente se não for colocar
+	\include{./01-elementos-pre-textuais/resumoPt}		% Resumo na língua vernácula-- elemento obrigatório
+	\include{./01-elementos-pre-textuais/resumoEn}		% Resumo em língua estrangeira-- elemento obrigatório
+	\include{./01-elementos-pre-textuais/listaFiguras}	% Lista de figuras-- elemento obrigatório caso tenha figuras no seu texto
+	\include{./01-elementos-pre-textuais/listaTabelas}	% Lista de tabelas-- elemento obrigatório caso tenha tabelas no seu texto
+	\include{./01-elementos-pre-textuais/listaQuadros}	% Lista de quadros-- elemento obrigatório caso tenha quadros no seu texto
+%%	\include{./01-elementos-pre-textuais/listaAlgoritmos}	% Lista de algoritmos caso tenha algoritmos
+	\include{./01-elementos-pre-textuais/listaSiglas}	% Lista de abreviaturas e siglas caso tenha usado no texto
+	\include{./01-elementos-pre-textuais/listaSimbolos}	% Lista de símbolos-- elemento opcional
+	\include{./01-elementos-pre-textuais/sumario}		% Sumário-- elemento obrigatório
+%=======================================================================================================================
+% elementos textuais
+	\textual
+
+	\include{./02-elementos-textuais/cap1-introducao}		%introdução
+	\include{./02-elementos-textuais/cap2-Elementos_dissertacao}	% Elementos da dissertação/tese
+	\include{./02-elementos-textuais/cap3-citacoes_referencias}	% citações e referências
+	\include{./02-elementos-textuais/cap4-figuras_tabelas}		% tabelas e figuras
+	\include{./02-elementos-textuais/cap5-conclusao}		% Conclusão
+
+%========================================================================================================================
+% elementos pós textuais
+	\postextual
+	\bibliography{./03-elementos-pos-textuais/refbase.bib}
+%
+
+	\include{./03-elementos-pos-textuais/glossario}	% Glossário
+	\include{./03-elementos-pos-textuais/apendices}		% Apêndices
+	\include{./03-elementos-pos-textuais/anexos}		% Anexos
+	%\include{./03-elementos-pos-textuais/indices}		% Índices
+
+\end{document}

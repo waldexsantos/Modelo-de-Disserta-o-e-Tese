@@ -1,0 +1,108 @@
+%
+% 
+%
+
+\chapter{Citações e Referências}\label{referencias}
+Neste capítulo, assim como nos anteriores procuramos inserir muitas citações bibliográficas a fim de familiarizar os autores com as diferentes maneiras de fazê-las, nesse sentido o template é bastante versátil. Os principais itens de bibliografia citados são livros, artigos em conferências,
+artigos em jornais e páginas Web. A bibliografia deve seguir as normas da ABNT e também da UESC.
+
+Citações são trechos transcritos ou informações retiradas das publicações consultadas para a realização do trabalho.
+As citações são utilizadas no texto com o propósito de esclarecer, completar, embasar ou corroborar as ideias do autor.
+
+Todas as publicações consultadas e efetivamente utilizadas (através de citações) devem ser listadas, obrigatoriamente, nas referências bibliográficas, de forma a preservar os direitos autorais e intelectuais, conforme consta nas normas da ABNT e da UESC.
+
+A bibliografia é feita no padrão {\ttfamily bibtex}. As referências são colocadas em um arquivo separado. Nesse caso o arquivo  {\ttfamily refbase}. Fizemos questão de colocar uma referência de cada formato de fontes mais populares: livros, jornais, mídias na internet etc.
+
+Os elementos de cada item bibliográfico que devem constar na bibliografia são apresentados a seguir.
+
+Para livros, o formato da bibliografia no arquivo fonte é o seguinte:
+
+\begin{verbatim}
+@Book{linked,
+   author = {A. L. Barabasi},
+   title = {Linked: The New Science of Networks},
+   publisher = {Perseus Publishing},
+   year = {2002},
+}
+\end{verbatim}
+
+A citação deste livro se faz da seguinte forma \verb#\cite{linked}# e o resultado fica assim \cite{linked}.
+Para os artigos em {\textit jornais}, veja por exemplo \cite{carvalho:2001},
+descrito da seguinte forma no arquivo {\ttfamily .bib}:
+
+\begin{verbatim}
+@Article{carvalho:2001,
+  Title = {Inteligência competitiva numa visão de futuro},
+  Author= {Cláudia Carvalho and José Fajardo and Joaquim Cruz},
+  Journal = {DataGramaZero - Revista da Ciência da Informação},
+  Year = {2001},
+  Number= {3},
+  Pages = {12--16},
+  Volume = {2},
+
+  Mounth= {junho},
+  Subtitle = {proposta metodológica}
+}
+\end{verbatim}
+
+
+\section{Citação indiretas ou livres}\label{ciação direta}
+
+As citações indiretas são feitas com base no comando \verb|\citeonline{label}|, onde \verb|label| corresponde a um nome dado para chamar a referência no texto. O comando \verb|\citeonline{maturana:2003}| gera a seguinte citação indireta: \citeonline{maturana:2003} defende um princípio de lógica...
+
+Além disso, \citeonline{teste:2014} argumenta que \ldots\mbox{ } Observe o detalhe do termo \textit{et al}.
+que deve ser utilizado quando o trabalho citado possui mais de três autores. Este é o padrão do estilo {\ttfamily abntex2}.
+
+Para evitar uma interrupção na sequência do texto, o que poderia, eventualmente, prejudicar a leitura, pode-se indicar a fonte entre parênteses imediatamente após a citação indireta. Porém, neste caso específico, o nome do autor deve vir em caixa alta, seguido do ano da publicação, como no exemplo a seguir.
+
+A física, então, constituiu-se como a prova mínima da efetividade do método científico para descobrir as verdades do universo \cite{teste:2014,maturana:2003}. Essa citação foi obtida com o comando \verb|\cite{teste:2014,maturana:2003}|
+
+
+\section{Citações diretas ou literais}\label{citacoesdiretas}
+
+Há várias maneiras de se fazer uma citação literal, como mostra os exemplos abaixo.
+
+As citações longas (mais de 3 linhas) devem usar um parágrafo específico para ela, na forma de um texto recuado (4 cm da margem esquerda), com tamanho de letra menor do aquela utilizada no texto e espaçamento simples entre as linhas, seguido dos sobrenomes dos autores em caixa alta (separados por ponto e vírgula), ano de publicação e número da página.
+
+As citações diretas são obtidas com o comando \verb|\cite{label}|. Veja o exemplo abaixo onde usamos o ambiente citação e o comando \verb|\cite[p.~28]{morinmoigne:2000}| para citar o autor.
+
+\begin{citacao}
+Desse modo, opera-se uma ruptura decisiva entre a reflexividade filosófica, isto 	é a possibilidade do sujeito de pensar e de refletir, e a objetividade científica.
+Encontramo-nos num ponto em que o conhecimento científico está sem consciência.
+Sem consciência moral, sem consciência reflexiva e também subjetiva.
+Cada vez mais o desenvolvimento extraordinário do conhecimento científico vai tornar menos praticável a própria possibilidade de reflexão do sujeito sobre a sua pesquisa \cite[p.~28]{morinmoigne:2000}.
+\end{citacao}
+
+A sintaxe do ambiente citação utilizado acima é a seguinte:
+\begin{verbatim}
+    \begin{citacao}
+        <citacao>
+    \end{citacao}
+\end{verbatim}
+
+Opcionalmente, pode-se referenciar os autores no corpo de texto (neste caso seus nomes devem vir em minúsculas), e em seguida colocar a citação literal, em um novo parágrafo recuado. Nesse caso após a citação literal não mais aparece o nome dos autores, visto que já se encontra no texto.
+Veja o exemplo seguinte.
+
+\citeonline[p.~33]{morinmoigne:2000}, ao fazerem as suas críticas à ciência, explicitam uma ideia coletiva:
+
+\begin{citacao}
+Mas o curioso é que o conhecimento científico que descobriu os meios realmente extraordinários para, por exemplo, ver aquilo que se passa no nosso sol, para tentar conceber a estrutura das estrelas extremamente distantes, e até mesmo para tentar pesar o universo, o que é algo de extrema utilidade, o conhecimento científico que multiplicou seus meios de observação e de concepção do universo, dos objetos, está completamente cego, se quiser considerar-se apenas a si próprio!
+\end{citacao}
+
+As citações curtas (menos de 3 linhas) devem ser inseridas diretamente no texto (entre aspas), seguida do nome do autor (em caixa alta), ano e página, como no exemplo a seguir.
+
+Então significa apenas que ``assumo que não posso fazer referência a entidades independentes de mim para construir meu explicar'' \cite[p.~35]{maturana:2003}.
+
+\section{Resumo dos comandos para  referências }\label{referenciasUtilizadas}
+
+Apresentamos abaixo exemplos de referências já citadas no texto com seus comandos.
+
+\begin{itemize}
+	\item \citeonline{maturana:2003}\\ \verb|\citeonline{maturana:2003}|
+	\item \citeonline{teste:2014}\\ \verb|\citeonline{teste:2014}|
+	\item \cite[p.~28]{morinmoigne:2000}\\ \verb|\cite[p.~28]{morinmoigne:2000}|
+	\item \citeonline[p.~33]{morinmoigne:2000}\\ \verb|\citeonline[p.~33]{morinmoigne:2000}|
+	\item \cite[p.~35]{maturana:2003}\\ \verb|\cite[p.~35]{maturana:2003}|
+	\item \citeonline[p.~35]{maturana:2003}\\ \verb|\citeonline[p.~35]{maturana:2003}|
+	\item \cite{teste:2014,maturana:2003}\\ \verb|\cite{teste:2014,maturana:2003}|
+\end{itemize}

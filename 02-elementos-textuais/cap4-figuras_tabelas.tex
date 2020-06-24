@@ -1,0 +1,116 @@
+
+\chapter{Figuras, Tabelas e outros elementos}\label{chap:fundamentacaoTeorica}
+A seguir ilustra-se a forma de incluir figuras, tabelas, equações, siglas e símbolos no documento, obtendo indexação automática em suas respectivas listas.
+A numeração sequencial de figuras, tabelas e equações ocorre de modo automático.
+Referências cruzadas são obtidas através dos comandos \verb#\label{}# e \verb#\ref{}#.
+Por exemplo, estou me referindo agora a introdução que corresponde ao  capítulo \ref{chap:introducao}. Todos os comandos utilizados para gerar os elementos desse texto estão nos respectivos arquivos dos capítulos. Não os colocaremos aqui para que o texto não fique demasiadamente extenso e não ficarmos repetitivos.
+
+\section{Figuras}
+\label{sec:figuras}
+
+Abaixo é apresentado um exemplo de figura. A  figura \ref{fig:brasaouesc} aparece automaticamente na lista de figuras. Para uso avançado de imagens no LATEX, recomenda-se a consulta de literatura especializada.
+
+\begin{figure}[!htb]
+\centering
+	\includegraphics[width=0.3\textwidth]{./04-figuras/brasaouesc}\label{fig:brasaouesc}
+    \caption{Brasão da UESC}\vspace{-0.4cm}
+    \fonte{\citeonline{teste:2014}}
+
+\end{figure}
+
+\subsection{Figuras lado a lado}\label{figladoalado}
+Para colocar figuras lado a lado com legendas diferentes utilizamos o pacote {\ttfamily subfigure}, declarado no preâmbulo. Porém o pacote abntex, no qual nos baseamos, é incompatível com o pacote {\ttfamily subfigure}. Ao tentar usá-lo a compilação apresenta erros de incompatibilidade. 
+
+Para contornar essa situação fiz algumas alterações necessárias no pacote e o renomeei como {\ttfamily subfigureppmgc}. Assim, caso você queira utilizar no seu texto figuras lado a lado com legendas diferentes, deve utilizar essa nova versão do  pacote, o qual se encontra na pasta {\ttfamily pacotes}. O template já está configurada para utilizá-lo automaticamente.
+
+Caso as figuras que fiquem lado a lado  utilizem apenas uma legenda não há necessidade do pacote, basta chamá-las normalmente no ambiente {\ttfamily figure}.
+
+Abaixo segue um exemplo de como fica a utilização do pacote inserindo figuras lado a lado, com legendas diferentes.\\
+
+\begin{figure}[!htb]
+ \subfigure[\label{fig:rc-adezanoss}]{
+\includegraphics[width=7cm,height=6cm]{04-figuras/rc-adezanos}}
+\subfigure[\label{fig:rc-atualmentee}]{
+\includegraphics[width=7cm,height=6cm]{04-figuras/rc-atualmente}}
+\caption{Imagens comparando  o rio Cachoeira a dez anos atrás (a)  e em 2013 (b)} \label{fig:estadorc}\vspace{-0.6cm}
+\fonte{Pimenta Blog.BR, no endereço em $<$http://www.pimenta.blog.br/$>$}
+\end{figure}
+
+Este \href{https://www.overleaf.com/learn/latex/Inserting_Images}{link do overleaf} contém mais informações de como trabalhar com figuras em latex. 
+\section{Quadros e Tabelas}
+\label{sec:tabelas}
+
+Também é apresentado o exemplo do quadro \ref{qua:comparabd} e da tabela \ref{tab:correlacao}, que aparece automaticamente na lista de quadros e tabelas.
+Informações sobre a construção de tabelas no LATEX podem ser encontradas na literatura especializada e neste link de ajuda do overleaf: \href{https://www.overleaf.com/learn/latex/Tables}{https://www.overleaf.com/learn/latex/Tables}.
+
+\input{./06-quadros/quacomparabd}
+\newpage
+\textbf{Exemplos de tabelas:
+}
+\input{./05-tabelas/tabcorrelacao}
+
+\input{./05-tabelas/tabteste}
+
+\section{Equações}
+\label{sec:equacoes}
+
+A transformada de Laplace é dada na equação \ref{eq:laplace}, enquanto a equação \ref{eq:dft} apresenta a formulação da transformada discreta de Fourier bidimensional\footnote{Deve-se reparar na formatação esteticamente perfeita destas equações.}.
+
+\begin{equation}
+	X(s) = \int\limits_{t = -\infty}^{\infty} x(t) \, \text{e}^{-st} \, dt
+	\label{eq:laplace}
+\end{equation}
+
+\begin{equation}
+	F(u, v) = \sum_{m = 0}^{M - 1} \sum_{n = 0}^{N - 1} f(m, n) \exp \left[ -j 2 \pi \left( \frac{u m}{M} + \frac{v n}{N} \right) \right]
+	\label{eq:dft}
+\end{equation}
+
+\section{Algoritmos}
+Ja declaramos no preâmbulo o pacote {\ttfamily algorithm2e} necessário para utilizar algoritmos em latex. Isto é feito dentro do ambiente {\ttfamily algorithm}, conforme exemplos  disponíveis na pasta {\ttfamily 07-algoritmos}. Segue abaixo um primeiro exemplo:\\
+\input{07-algoritmos/algoritmo1}
+
+No exemplo acima, utilizamos \verb#\KwData{}#  para declara as variáveis de entrada (pode-se utilizar também \verb#\KwIn{}#) e  \verb#\KwResult{}# para variáveis de saída (ou poderia ser utilizado \verb#\KwOut{}#. 
+
+\subsection{Comandos para escrita dos algoritmos}
+Os comandos que podem ser utilizados estão na documentação do pacote {\ttfamily algorithm2e}, mas segue abaixo um pequeno resumo de alguns dos mais úteis:
+\begin{enumerate}
+    \item Ponto e Vírgula:
+    \begin{itemize}
+        \item \verb#\;#
+    \end{itemize}
+    \item Ifs:
+    \begin{itemize}
+        \item \verb#\If{condição}{then block#
+        \item \verb#\Else{else block}#
+\item \verb#\eIf{condição}{then block}{else block}#
+    \end{itemize}
+    \item Switchs:
+    \begin{itemize}
+        \item \verb#\\Switch{condição}{Switch block}#
+        \item \verb#\\Case{a case}{case block}#
+        \item \verb#\\Other{otherwise block}#
+    \end{itemize}
+    \item Loops:
+    \begin{itemize}
+        \item \verb#\For{condition}{text loop}#
+    \item \verb#\While{condition}{text loop}#
+    \item \verb#\ForEach{condition}{text loop}#
+    \item \verb#\Repeat{end condition}{text loop}#
+    \end{itemize}
+    \item Input e Output:
+    \begin{itemize}
+        \item \verb#\KwIn{input}#
+\item \verb#\KwOut{output}#
+    \end{itemize}
+    \item Comentários:
+    \begin{itemize}
+        \item \verb#\tcc{line(s) of comment}: Comentários de Trecho (/* */)#
+    \item \verb#\tcp{line(s) of comment}: Comentários de Linha (// )#
+    \end{itemize}
+\end{enumerate}
+
+
+
+Abaixo apresentamos mais um exemplo em que há apenas \verb#if# e não há \verb#else#. Neste caso utilizamos o comando: \verb#\If{condição}{se a condição for verdadeira}}#\\
+\input{07-algoritmos/algoritmo2}

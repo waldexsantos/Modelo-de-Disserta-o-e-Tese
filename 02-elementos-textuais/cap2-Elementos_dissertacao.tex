@@ -1,0 +1,40 @@
+
+\chapter{Chamada dos arquivos dentro do código principal}
+O arquivo principal a ser copilado é {\ttfamily PPGMC.tex}. Nele são chamados os  arquivos/elementos da sua dissertação (ou tese). Faça as modificações após o comando \verb#\begin{document}#. Depois abra cada um dos documentos que estão sendo chamados pelo documento mestre e modifique-os para obter o seu documento final. Todos os arquivos dos elementos pré-textuais, textuais e pós-textuais devem ser editados pelos autores, segundo suas necessidades.
+
+\section{Arquivos, Pacotes e configurações}
+O arquivo {\ttfamily pacoteprincipal.tex}, chamado no arquivo principal com o comando \verb#\include{pacotes/pacoteprincipal}#, contém os principais pacotes utilizados. Já o comando \verb#\include{pacotes/defcor}}# chama o arquivo de configurações de cores. Ambos os arquivos estão na  {\ttfamily pasta pacotes}. Ainda nesta mesma pasta está pacote \verb#subfigureppgmc# necessário para colocar figura lado a lado, conforme explicado na subseção \ref{figladoalado} e o arquivo {\ttfamily ppgmc-uesc} que contém toda a programação da classe. Esses arquivos não devem ser apagados ou alterados.
+
+o comando \verb#\pretextual# indica o início da chamada dos elementos obrigatórios e opcionais. Os comandos  \verb#\imprimircapa# e \verb#\imprimirfolhaderosto{}# imprimem a capa e  a folha de rosto, respectivamente, com as informações contida no arquivo {\ttfamily 1-Inf.Capa-FolhaRosto} na pasta {\ttfamily 01-elementos-pre-textuais}. Tanto a capa quanto a folha de rosto são obrigatórias segundo as normas da ABNT e da UESC.
+
+\textit{No arquivo \textit{{\ttfamily 1-Inf.Capa-FolhaRosto}} referido é que você dever colocar as informações principais do seu trabalho, tais como: título, autor, orientador, coorientador (caso não tenha coorientador comente a linha), instituição, tipo de trabalho (dissertação ou tese) etc. Tais informações aparecerão automaticamente na capa, folha de rosto, folha de aprovação.}
+
+Este template leva em consideração que o autor possui coorientador, caso não possua basta comentar a linha 43 do arquivo \textit{{\ttfamily FolhaAprovacao}}, também na pasta {\ttfamily 01-elementos-pre-textuais}.
+
+
+Na pasta {\ttfamily 01-elementos-pre-textuais} estão exemplos de arquivos pré-textuais, chamados no arquivo principal, a saber:
+\begin{alineas}
+\item \textbf{FolhaAprovacao}  -- elemento obrigatório
+\item \textbf{dedicatoria} -- elemento opcional
+\item \textbf{agradecimentos} -- elemento opcional
+\item \textbf{epigrafe} -- elemento opcional
+\item \textbf{resumoPt} -- elemento obrigatório
+\item \textbf{resumoEn} -- elemento obrigatório
+\item \textbf{listaFiguras} -- elemento opcional
+\item \textbf{listaTabelas} -- elemento opcional 
+\item \textbf{listaQuadros} -- elemento opcional 
+\item \textbf{listaAlgoritmos} -- elemento opcional
+\item \textbf{listaSiglas} -- elemento opcional
+\item \textbf{listaSimbolos} -- elemento opcional
+\item \textbf{sumário} -- elemento obrigatório
+\end{alineas}
+
+Os arquivos {\ttfamily listaFiguras, listaTabelas, listaQuadros e listaAlgoritmos} não precisam ser modificados. Caso algum destes elementos não seja necessário no seu trbalho, simplesmente comente no arquivo principal. Os arquivos  {\ttfamily listaSiglas e listaSimbolos} devem ser editados se fizerem parte do seu trabalho, caso contrário comente no arquivo principal.
+
+A \textit{ficha catalográfica} é um elemento obrigatório fornecida pela biblioteca e deve ser colocado no verso da folha de rosto. No arquivo principal, a linha correspondente está comentada. Após ter em mão essa ficha, fornecida pela sua biblioteca, faça upload do arquvivo renomeado para \textit{{\ttfamily FichaCatalografica}} e descomente a linha correspondente no arquivo principal. 
+
+O comando 	\verb#\textual# indica o início dos elementos textuais que são constituídos pela introdução, capítulos e conclusão. Já o comando \verb#\postextual# marca o início dos elementos pós-textuais, os quais são: referências, glossário, apêndices e índices. As referências devem ser armazenadas num arquivo de extensão \verb#.bib#. Na pasta \verb#03-elementos-pos-textuais# tem o arquivo {\ttfamily refbase.bib} que contém uma quantidade de referências como exemplo. Você pode substituir as que estão nesse arquivo pelas suas, sem necessidade de criar um novo arquivo. O capítulo \ref{chap:conclusao} traz mais detalhes.
+\section{Coleta de dados}
+
+Inserir seu texto aqui...
+

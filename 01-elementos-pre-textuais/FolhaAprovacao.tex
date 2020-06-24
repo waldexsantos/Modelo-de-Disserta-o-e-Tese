@@ -1,0 +1,68 @@
+%
+% Documento: Folha de aprovação
+%
+\makeatletter
+\begin{folhadeaprovacao}
+
+	\begin{center}
+		{\large\normalfont\scshape\textbf\imprimirautor}
+	\end{center}
+
+	\vspace*{50pt}
+
+	\begin{center}
+		\ABNTEXchapterfont\Large\scshape\imprimirtitulo
+		\abntex@ifnotempty{\imprimirsubtitulo}{
+			{\ABNTEXchapterfont\Large\scshape{\hspace*{-0.3em}: }}{\ABNTEXchapterfont\large\scshape\imprimirsubtitulo}
+		}
+	\end{center}
+
+	\vspace*{30pt}
+
+%	\abntex@ifnotempty{\imprimirpreambulo}{
+%		\SingleSpacing
+%		\begin{tabular}{p{.25\textwidth}p{.13\textwidth}p{.44\textwidth}}
+%			& \multicolumn{2}{p{.6\textwidth}}{\small\hyphenpenalty=10000{\imprimirpreambulo}} \\ & & \\
+%		\end{tabular}
+%	}
+%
+%	\vspace*{7pt}
+
+	\begin{center}
+		\imprimirlocal, \imprimirdatadefesa
+		\end{center}
+		
+		\vspace*{7pt}
+		\begin{center}
+		Comissão Examinadora
+		\end{center}
+\vspace{-2pt}
+\begin{center}
+\begin{tabular}{cc}
+	\assinatura{\textbf{\imprimirorientador} \\ UESC\\ (Orientador)}&\\
+		\assinatura{\textbf{\imprimircoorientador} \\ \imprimirinstCoorientador\\ (Coorientador)}&\\ 
+		\assinatura{\textbf{\imprimirbancamembrointerno} \\ \imprimirbancainstmembrointerno} &\\
+		\assinatura{\textbf{\imprimirbancamembroexterno} \\ \imprimirbancainstmembroexterno}&\\
+	
+\end{tabular}
+	
+	\end{center}
+%	\begin{center}
+%		\assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+%		\assinatura{\textbf{Professor} \\ Convidado 1}
+%		\assinatura{\textbf{Professor} \\ Convidado 2}
+%		%\assinatura{\textbf{Professor} \\ Convidado 3}
+%		%\assinatura{\textbf{Professor} \\ Convidado 4}
+%	\end{center}
+
+%	\vspace*{\fill}
+
+%	\begin{center}
+%		\normalfont\scshape{\imprimirinstituicao}\\
+%		\normalfont\scshape{\imprimirprograma}\\
+%		\normalfont\scshape{\imprimirlocal}\\
+%		\normalfont\scshape{\imprimirdata}
+%	\end{center}
+
+\end{folhadeaprovacao}
+%\makeatother
